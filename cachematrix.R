@@ -1,3 +1,9 @@
+## THis function is able to cache potentially time-consuming
+## computatios on the inverse of a Matrix
+
+
+##The makeCacheMatrix function creates a special "matrix" object 
+## that can cache its inverse
 makeCacheMatrix <- function(x = matrix()) {
         m <- NULL
         set <- function(y) {
@@ -12,6 +18,8 @@ makeCacheMatrix <- function(x = matrix()) {
              getinversion = getinversion)
 }
 
+## The cacheSolve function computes the inverse of the special "matrix"
+## returned by makeCacheMatrix aove
 cacheSolve <- function(x, ...) {
         m <- x$getinversion()
         if(!is.null(m)) {
